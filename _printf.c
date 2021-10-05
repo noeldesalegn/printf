@@ -4,7 +4,7 @@
  * @format: string that contains the format to print
  * Return: number of characters written
  */
-int _printf(char *format, ...)
+int _printf(char const *format, ...)
 {
 int written = 0, (*structype)(char *, va_list);
 char q[3];
