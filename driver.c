@@ -1,18 +1,32 @@
 #include "main.h"
 /**
- * _puts - prints a string
- * new line, to stdout.
- * @string: input string
- * Return: count of string.
+ * driver - selector for type of fun.
+ * @format: string.
+ * Description: the function loops through the structs
+ * selector[] ment of the struct.
+ * Return: a pointer
+ * structype selector - Struct
  */
-int _puts(char *string)
+int (*driver(char const *format))(char const *format, va_list)
 {
-int contador = 0;
-while (*string)
+int i;
+structype selector[] = {
+{"%c", printc},
+{"%s", printstr},
+{"%d", printint},
+{"%i", printint},
+{"%%", printpercent},
+{"%x", printhex},
+{"%X", printHEX},
+{"%o", printocta},
+{NULL, NULL}
+};
+if (format[1] == ' ' || format[1] == '\0')
+return (NULL);
+for (i = 0; selector[i].q; i++)
 {
-_putchar(*string);
-string++;
-contador++;
+if (format[1] == selector[i].q[1])
+return (selector[i].u);
 }
-return (contador);
+return (NULL);
 }

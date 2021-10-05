@@ -5,7 +5,7 @@
  * @string: input string
  * Return: count of string.
  */
-int _puts(char *string)
+int _puts(char const *string)
 {
 int contador = 0;
 while (*string)

@@ -5,7 +5,7 @@
  * @pa: va_list
  * Return: number of characters printed
  */
-int printpercent(char *format, va_list pa)
+int printpercent(char const *format, va_list pa)
 {
 (void)format;
 (void)pa;

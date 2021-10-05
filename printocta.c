@@ -5,7 +5,7 @@
  * @pa: list that contains the hexadecimal
  * Return: number.
  */
-int printocta(char *format, va_list pa)
+int printocta(char const *format, va_list pa)
 {
 unsigned int num = va_arg(pa, unsigned int);
 unsigned int copia;
