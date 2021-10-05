@@ -1,48 +1,26 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 /**
- * _printf - prints formatted data to stdout
- * @format: string that contains the format to print
- * Return: number of characters written
+ * print_char - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: 1.
  */
-int _printf(char const *format, ...)
+int print_char(va_list c)
 {
-int written = 0, (*structype)(char *, va_list);
-char q[3];
-va_list pa;
-if (format == NULL)
-return (-1);
-q[2] = '\0';
-va_start(pa, format);
-_putchar(-1);
-while (format[0])
-{
-if (format[0] == '%')
-{
-structype = driver(format);
-if (structype)
-{
-q[0] = '%';
-q[1] = format[1];
-written += structype(q, pa);
+unsigned char my_char;
+my_char = va_arg(c, int);
+_putchar(my_char);
+return (1);
 }
-else if (format[1] != '\0')
+/**
+ * print_porcentage - %
+ *
+ * Return: 1.
+ */
+int print_porcentage(void)
 {
-written += _putchar('%');
-written += _putchar(format[1]);
-}
-else
-{
-written += _putchar('%');
-break;
-}
-format += 2;
-}
-else
-{
-written += _putchar(format[0]);
-format++;
-}
-}
-_putchar(-2);
-return (written);
+_putchar('%');
+return (1);
 }
